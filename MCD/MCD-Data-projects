@@ -1,0 +1,32 @@
+DROP TABLE IF EXISTS Departements ;
+CREATE TABLE Departements (id_Departements INT(10) AUTO_INCREMENT NOT NULL,
+region_code_Departements VARCHAR(3),
+code_Departements VARCHAR(3),
+name_Departements VARCHAR(255),
+slug_Departements VARCHAR(255),
+id_Regions **NOT FOUND**(10),
+PRIMARY KEY (id_Departements)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Regions ;
+CREATE TABLE Regions (id_Regions INT(10) AUTO_INCREMENT NOT NULL,
+code_Regions VARCHAR(3),
+name_Regions VARCHAR(255),
+slug_Regions VARCHAR(255),
+PRIMARY KEY (id_Regions)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Photos ;
+CREATE TABLE Photos (ID_Photos INT(10) AUTO_INCREMENT NOT NULL,
+DPT_Photos INT(2),
+COMMUNE_Photos VARCHAR(255),
+EDIFICE_Photos VARCHAR(255),
+LEGENDE_Photos VARCHAR(255),
+AUTEUR_Photos VARCHAR(255),
+DATE_Photos DATETIME,
+MINIATURE_Photos VARCHAR(255),
+IMAGE_Photos VARCHAR(255),
+id_Departements **NOT FOUND**(10),
+PRIMARY KEY (ID_Photos)) ENGINE=InnoDB;
+
+ALTER TABLE Departements ADD CONSTRAINT FK_Departements_id_Regions FOREIGN KEY (id_Regions) REFERENCES Regions (id_Regions);
+
+ALTER TABLE Photos ADD CONSTRAINT FK_Photos_id_Departements FOREIGN KEY (id_Departements) REFERENCES Departements (id_Departements);
