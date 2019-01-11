@@ -74,7 +74,6 @@ header{
 	line-height: 50px;
 	border-radius: 10px;
 	box-shadow: 0 0 20px black;
-
 }
 body{
 	width: 100%;
@@ -89,7 +88,6 @@ body{
 #francemap{
 	border-radius: 10px;
 	box-shadow: 0 0 10px black;
-
 }
 footer{
 	background-color: #BCAAA4;
@@ -103,7 +101,7 @@ footer{
 	text-align: center;
 }
 .lien{
-	font-size: .8em;
+	font-size: 1em;
 	margin-left: 20px;
 }
 /* media queries */
@@ -117,4 +115,20 @@ footer{
 	footer{
 		position: relative;
 	}
+}
+
+/* Gestion page metion legal */
+
+main{
+	margin-top: 70px;
+}
+.bouton{
+	Position: fixed;
+	top: 5px;
+	left: 10px;
+	width: 40px;
+	height: 40px;
+}
+img{
+	width: 100%;
 }

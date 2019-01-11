@@ -17,8 +17,8 @@
 			<div id="francemap" style="width: 1000px; height: 800px;"></div>
 		</div>
 		<footer>
-			<a class="lien" href="#">Mentions légale</a>
-			<a class="lien" href="#">Copyright</a>
+			<a class="lien" href="./Source/html/mention.html">Mentions légale</a>
+			<span class="lien"class="lien" href="#">@Copyright-DCl-aramis</span>
 		</footer>
   </body>
 </html>
