@@ -5,13 +5,27 @@
         <!-- Nous chargeons les fichiers CDN de Leaflet. Le CSS AVANT le JS -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
             crossorigin="" />
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.css" />
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.3.0/dist/MarkerCluster.Default.css" />
+		<script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.3.0/dist/leaflet.markercluster.js'></script>  
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
             crossorigin=""></script>
 		<script type="text/javascript">
-			// On initialise la latitude et la longitude de Paris (centre de la carte)
+			// On initialise la latitude et la longitude de Paris (centre de la carte
+
 			var lat = 47.08;
 			var lon = 2.4;
 			var macarte = null;
+			var villes = {
+				"Charost": { "lat": 46.9833, "lon": 2.1333 },
+				"Vierzon": { "lat": 47.2167, "lon": 2.0833 },
+				"Bourges": { "lat": 47.0833, "lon": 2.4 },
+				"coucou": { "lat": 47.08, "lon": 2.42 },
+				"Ourouer-les-Bourdelins": { "lat": 46.9167, "lon": 2.8167 },
+				"Rians": { "lat": 47.1787, "lon": 2.6136 },
+				"Avord" : {"lat": 47.0333, "lon": 2.65 }
+
+				};
 			// Fonction d'initialisation de la carte
 			function initMap() {
 				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
@@ -22,7 +36,12 @@
                     attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
                     minZoom: 1,
                     maxZoom: 20
-                }).addTo(macarte);
+				}).addTo(macarte);
+				// Nous ajoutons un marqueur
+			// Nous parcourons la liste des villes
+			for (ville in villes) {
+				var marker = L.marker([villes[ville].lat, villes[ville].lon]).addTo(macarte);
+				} 
             }
 			window.onload = function(){
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé

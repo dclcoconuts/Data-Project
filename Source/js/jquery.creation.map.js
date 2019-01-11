@@ -11,13 +11,7 @@ $(document).ready(function() {
         showTooltip: true,
         onRegionClick: function(element, code, region)
         {
-            var message = 'Département : "'
-                + region 
-                + '" || Code : "'
-                + code
-                + '"';
-            
-            alert(message);
-        }
+            window.location.href = '/france_map.html?dep=' + code;
+        } 
     });
 });
