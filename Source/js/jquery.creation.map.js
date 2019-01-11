@@ -3,7 +3,7 @@ $(document).ready(function() {
         map: 'france_fr',
         hoverOpacity: 0.5,
         hoverColor: false,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#A1887F",
         colors: couleurs,
         borderColor: "#000000",
         selectedColor: "#EC0000",

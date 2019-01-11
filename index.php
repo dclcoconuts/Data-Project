@@ -10,11 +10,15 @@
 	
 </head>
   <body>
-	<header>
-		<h1>Photos des monuments Historiques de France (1850 a 1914)</h1>
-	</header>
-	<div id="carte"> 
-		<div id="francemap" style="width: 1000px; height: 800px;"></div>
-	</div>
+		<header>
+			<h1>Photos des monuments Historiques de France (1850 a 1914)</h1>
+		</header>
+		<div id="carte"> 
+			<div id="francemap" style="width: 1000px; height: 800px;"></div>
+		</div>
+		<footer>
+			<a class="lien" href="#">Mentions légale</a>
+			<a class="lien" href="#">Copyright</a>
+		</footer>
   </body>
 </html>

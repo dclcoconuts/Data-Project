@@ -8,6 +8,12 @@
  *
  * Fork Me @ https://github.com/manifestinteractive/jqvmap
  */
+ *{
+	 padding: 0;
+	 margin: 0;
+	 box-sizing: border-box;
+ }
+ /* style de la carte de france */
 .jqvmap-label
 {
 	position: absolute;
@@ -28,14 +34,13 @@
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
-	background: #000000;
+	background: #795548;
 	padding: 3px;
 	color: white;
-	width: 10px;
-	height: 10px;
 	cursor: pointer;
 	line-height: 10px;
 	text-align: center;
+	box-shadow: 0 0 1px white;
 }
 .jqvmap-zoomin
 {
@@ -54,14 +59,62 @@
   width: 100%;
   height: 500px;
 }
-#carte{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+/* style de la page index */
 h1{
 	text-transform: uppercase;
+	font-size: 1.5em;
 }
 header{
+	position: fixed;
+	top: 0;
 	text-align: center;
+	height: 50px;
+	background-color: #795548;
+	width: 100%;
+	line-height: 50px;
+	border-radius: 10px;
+	box-shadow: 0 0 20px black;
+
+}
+body{
+	width: 100%;
+	height: 100%;
+	background-color: #8D6E63;
+}
+#carte{
+	margin-top: 70px;
+	display: flex;
+	justify-content: center;
+}
+#francemap{
+	border-radius: 10px;
+	box-shadow: 0 0 10px black;
+
+}
+footer{
+	background-color: #BCAAA4;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	border-radius: 10px;
+	box-shadow: 0 0 20px black;
+	line-height: 50px;
+	text-align: center;
+}
+.lien{
+	font-size: .8em;
+	margin-left: 20px;
+}
+/* media queries */
+@media screen and (min-width : 1060px){
+	h1{
+		font-size: 2em;
+	}
+}
+
+@media screen and (max-height : 919px){
+	footer{
+		position: relative;
+	}
 }
