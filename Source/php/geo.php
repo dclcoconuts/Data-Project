@@ -6,8 +6,8 @@ $dep = $_GET["dep"];
 
 $host = '127.0.0.1';
 $db   = 'DATA_PROJECT';
-$user = '';
-$pass = '';
+$user = 'DP';
+$pass = 'Data_Project';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
