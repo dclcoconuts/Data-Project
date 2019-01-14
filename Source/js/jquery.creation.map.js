@@ -11,7 +11,7 @@ $(document).ready(function() {
         showTooltip: true,
         onRegionClick: function(element, code, region)
         {
-            window.location.href = '/france_map.html?dep=' + code;
+            window.location.href = './Source/php/departement.php?dep=' + code;
         } 
     });
 });
