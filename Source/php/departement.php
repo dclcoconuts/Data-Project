@@ -1,3 +1,4 @@
+<?php include "geo.php";?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,13 +9,14 @@
 		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg==" crossorigin=""></script>
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-		<script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js'></script>   
-       	  
+		<script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js'></script>
+
 		<script type="text/javascript">
 			// On initialise la latitude et la longitude de Paris (centre de la carte
-
-			var lat = 47.08;
-			var lon = 2.4;
+			// var lat = 47.08;
+			// var lon = 2.4;
+			var lat = <?php echo $glat; ?>;
+			var lon = <?php echo $glng; ?>;
 			var macarte = null;
 			var villes = {
 				"Charost": { "lat": 46.9833, "lon": 2.1333 },
@@ -45,12 +47,12 @@
 				// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
 				marker.bindPopup(ville);
 				markerClusters.addLayer(marker); // Nous ajoutons le marqueur aux groupes
-				} 
+				}
 				macarte.addLayer(markerClusters);
             }
 			window.onload = function(){
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-				initMap(); 
+				initMap();
 			};
 		</script>
 		<title>Departement</title>
