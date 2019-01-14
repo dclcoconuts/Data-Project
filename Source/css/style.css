@@ -62,8 +62,9 @@
 /* style de la page index */
 h1{
 	text-transform: uppercase;
-	font-size: 1.5em;
+	font-size: 1.7em;
 }
+
 header{
 	position: fixed;
 	top: 0;
@@ -74,6 +75,7 @@ header{
 	line-height: 50px;
 	border-radius: 10px;
 	box-shadow: 0 0 20px black;
+	z-index: 2;
 }
 body{
 	width: 100%;
@@ -109,6 +111,9 @@ footer{
 	h1{
 		font-size: 2em;
 	}
+	h2{
+		padding: 20px;
+	}
 }
 
 @media screen and (max-height : 919px){
@@ -123,15 +128,30 @@ main{
 	margin-top: 70px;
 }
 .bouton{
-	Position: fixed;
-	top: 10px;
-	right: 10px;
 	width: 40px;
 	height: 40px;
 	z-index: 10;
 }
+.taille{
+	width: 40px;
+	height: 40px;
+	margin-top: 40px;
+}
 img{
 	width: 100%;
+}
+.content{
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+h2{
+	font-size: 1.5em;
+	margin-top: 10px;
 }
 
 /*  page departement */
@@ -139,4 +159,12 @@ img{
 #map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
 	height:100vh;
 	z-index: 1;
+}
+.carte{
+	Position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	z-index: 10;
 }

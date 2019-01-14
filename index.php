@@ -17,8 +17,8 @@
 			<div id="francemap" style="width: 1000px; height: 800px;"></div>
 		</div>
 		<footer>
+			<span class="lien"class="lien" href="#">Copyright © 2019 Dcl-Aramis</span>
 			<a class="lien" href="./Source/html/mention.html">Mentions légale</a>
-			<span class="lien"class="lien" href="#">@Copyright-DCl-aramis</span>
 		</footer>
   </body>
 </html>
