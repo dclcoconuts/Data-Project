@@ -15,10 +15,17 @@
 			// On initialise la latitude et la longitude de Paris (centre de la carte
 			// var lat = 47.08;
 			// var lon = 2.4;
-			var lat = <?php echo $glat; ?>;
-			var lon = <?php echo $glng; ?>;
+			var lat = <?php echo json_encode($glat); ?>;
+			var lon = <?php echo json_encode($glng); ?>;
 			var macarte = null;
+			var nbVilles = <?php echo json_encode($NbVille); ?>;
+			var $table = <?php echo json_encode($tableau); ?>;
 			var villes = {
+
+				// for (i=0, i<nbVilles, i++){
+				// 	nomVille: { "lat": latVille, "lon": lonVille },
+				// }
+
 				"Charost": { "lat": 46.9833, "lon": 2.1333 },
 				"Vierzon": { "lat": 47.2167, "lon": 2.0833 },
 				"Bourges": { "lat": 47.0833, "lon": 2.4 },
@@ -42,7 +49,8 @@
 				}).addTo(macarte);
 				// Nous ajoutons un marqueur
 			// Nous parcourons la liste des villes
-			for (ville in villes) {
+			
+			for (ville in villes){
 				var marker = L.marker([villes[ville].lat, villes[ville].lon]);
 				// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
 				marker.bindPopup(ville);

@@ -24,23 +24,35 @@ try {
 // VILLE PREFECTURE
 
 $stmt = $pdo->query("SELECT PREFECTURE FROM PREFECTURE where NUMDEPT='$dep'");
-while ($row = $stmt->fetch())
+while ($row = $stmt->fetch()) 
 {
     $result = $row['PREFECTURE'];
   }
 
 // PREFECTURE GPS
 
-$stmt = $pdo->query("SELECT GPS_LAT FROM VILLE where NOMVILLE='$result'");
+$stmt = $pdo->query("SELECT GPS_LAT, GPS_LNG FROM VILLE where NOMVILLE='$result'");
 while ($row = $stmt->fetch())
 {
      $glat = $row['GPS_LAT'];
+     $glng = $row['GPS_LNG'];
   }
 
-$stmt = $pdo->query("SELECT GPS_LNG FROM VILLE where NOMVILLE='$result'");
+//Recuperer le nombre de ville du departement selectionner
+
+$stmt = $pdo->query("SELECT NUMDEPT, COUNT(*) as NB FROM VILLE where NUMDEPT='$dep'");
 while ($row = $stmt->fetch())
 {
-    $glng = $row['GPS_LNG'];
+    $NbVille = $row['NB'];
   }
+
+// Recuperer nom de chaque ville du departement selectionne ainsi que sa latitude et sa longitude
+
+$stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NUMDEPT='$dep' GROUP BY NOMVILLE");
+$tableau = array();
+while ($row = $stmtVille->fetch()){
+    $tableau[] = array($row['NOMVILLE'],$row['GPS_LAT'],$row['GPS_LNG']);
+};
+// var_dump($tableau);
 
 ?>
