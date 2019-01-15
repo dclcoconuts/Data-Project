@@ -48,7 +48,7 @@ while ($row = $stmt->fetch())
 
 // Recuperer nom de chaque ville du departement selectionne ainsi que sa latitude et sa longitude
 
-$stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NUMDEPT='$dep' GROUP BY NOMVILLE");
+$stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NUMDEPT='$dep'");
 $tableau = array();
 while ($row = $stmtVille->fetch()){
     $tableau[] = array($row['NOMVILLE'],$row['GPS_LAT'],$row['GPS_LNG']);
