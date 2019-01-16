@@ -4,4 +4,3 @@
 <script src="./Source/js/jquery.vmap.france.js" type="text/javascript"></script>
 <script src="./Source/js/jquery.vmap.colorsFrance.js" type="text/javascript"></script>
 <script src="./Source/js/jquery.creation.map.js" type="text/javascript"></script>
-  
