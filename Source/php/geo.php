@@ -40,11 +40,11 @@ while ($row = $stmt->fetch())
 
 //Recuperer le nombre de ville du departement selectionner
 
-$stmt = $pdo->query("SELECT NUMDEPT, COUNT(*) as NB FROM VILLE where NUMDEPT='$dep'");
-while ($row = $stmt->fetch())
-{
-    $NbVille = $row['NB'];
-  }
+// $stmt = $pdo->query("SELECT NUMDEPT, COUNT(*) as NB FROM VILLE where NUMDEPT='$dep'");
+// while ($row = $stmt->fetch())
+// {
+//     $NbVille = $row['NB'];
+//   }
 
 // Recuperer nom de chaque ville du departement selectionne ainsi que sa latitude et sa longitude
 
@@ -53,6 +53,5 @@ $tableau = array();
 while ($row = $stmtVille->fetch()){
     $tableau[] = array($row['NOMVILLE'],$row['GPS_LAT'],$row['GPS_LNG']);
 };
-// var_dump($tableau);
 
 ?>
