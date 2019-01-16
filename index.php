@@ -10,11 +10,15 @@
 	
 </head>
   <body>
-	<header>
-		<h1>Photos des monuments Historiques de France (1850 a 1914)</h1>
-	</header>
-	<div id="carte"> 
-		<div id="francemap" style="width: 1000px; height: 800px;"></div>
-	</div>
+		<header>
+			<h1>Photos des monuments Historiques de France (1850 a 1914)</h1>
+		</header>
+		<div id="carte"> 
+			<div id="francemap" style="width: 1000px; height: 800px;"></div>
+		</div>
+		<footer>
+			<span class="lien"class="lien" href="#">Copyright © 2019 Dcl-Aramis</span>
+			<a class="lien" href="./Source/html/mention.html">Mentions légale</a>
+		</footer>
   </body>
 </html>

@@ -3,7 +3,7 @@ $(document).ready(function() {
         map: 'france_fr',
         hoverOpacity: 0.5,
         hoverColor: false,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#A1887F",
         colors: couleurs,
         borderColor: "#000000",
         selectedColor: "#EC0000",
@@ -11,13 +11,7 @@ $(document).ready(function() {
         showTooltip: true,
         onRegionClick: function(element, code, region)
         {
-            var message = 'Département : "'
-                + region 
-                + '" || Code : "'
-                + code
-                + '"';
-            
-            alert(message);
+            window.location.href = './Source/php/departement.php?dep=' + code;
         }
     });
 });
