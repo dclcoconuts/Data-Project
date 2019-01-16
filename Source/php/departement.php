@@ -16,7 +16,9 @@
 			var lat = <?php echo json_encode($glat); ?>;
 			var lon = <?php echo json_encode($glng); ?>;
 			var macarte = null;
-			var table = <?php echo json_encode($tableau); ?>;
+			// variable table : tableau contenant le résultat de la requête des differents marqueurs par dept
+			var tabVille = <?php echo json_encode($tabVille); ?>;
+			var tabPhoto = <?php echo json_encode($tabPhoto); ?>;
 			var markerClusters;
 			
 			// Fonction d'initialisation de la carte
@@ -31,21 +33,48 @@
                     minZoom: 1,
                     maxZoom: 20
 				}).addTo(macarte);
-				// Nous ajoutons un marqueur
+
+			// CM : creation marqueur ppersonnalisé
+			var monument = L.icon({
+				iconUrl: '../img/galata-tower.png',
+				iconSize: [40, 50],
+				iconAnchor: [22, 94],
+				popupAnchor: [-3, -76]
+
+			});	
+
+			// CM: Paramétrage taille de la fenêtre popup
+			var customOptions = 
+			{
+				'minWidth': '400',
+			};
+
+   			// Nous ajoutons un marqueur
 			// Nous parcourons la liste des villes
 			
-			for (i=0; i<table.length; i++){
-				var marker = L.marker([table[i][1],table[i][2]]);
-				// Nous ajoutons la popup. A noter que son contenu (ici la variable ville) peut être du HTML
-				// marker.bindPopup([table[i][0]);
+			for (i=0; i<tabPhoto.length; i++){
+				var marker = L.marker([tabVille[i][1],tabVille[i][2]],{icon: monument});
+				// CM : Pour personnaliser la fenêtre popup pour chaque marqueur
+				var html = '';
+				html += '<h2>Commune : ' + tabPhoto[i][0] + '</h2></br>';
+				html += '<h4>Edifice : ' + tabPhoto[i][1] + '</h4></br>';
+				html += '<h4>Legende : ' + tabPhoto[i][2] + '</h4></br>';
+				html += '<h4>Auteur : ' + tabPhoto[i][3] + '</h4></br>';
+				html += '<h4>Date : ' + tabPhoto[i][4] + '</h4></br>';				
+				html += '<img src=\"' + tabPhoto[i][5]+ '\" style=\"width:200px;height:200px\"=/></br>';		
+				marker.bindPopup(html,customOptions);
+				
 				markerClusters.addLayer(marker); // Nous ajoutons le marqueur aux groupes
 				}
 				macarte.addLayer(markerClusters);
-            }
+            };
+
+
 			window.onload = function(){
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 				initMap();
 			};
+
 		</script>
 		<title>Departement</title>
 	</head>
