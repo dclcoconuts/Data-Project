@@ -54,7 +54,7 @@ while ($row = $stmtPhotos->fetch()){
 };
 
 
-var_dump($tabPhoto);
+// var_dump($tabPhoto);
 // var_dump($tabVille);
 
 
