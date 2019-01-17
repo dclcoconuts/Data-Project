@@ -1,7 +1,5 @@
 <?php
-ob_start();
-echo 'Numero ' . htmlspecialchars($_GET["dep"]) . 'Département';
-ob_end_clean();
+
 $dep = $_GET["dep"];
 
 $host = '127.0.0.1';
@@ -41,23 +39,19 @@ while ($row = $stmt->fetch())
 
 // Recuperer nom de chaque ville présente dans le fichier PHOTOS pour le département
 // et selectionne sa latitude et sa longitude dans le fichier VILLE
-$tabVille = array();
 $tabPhoto = array();
+
 $stmtPhotos = $pdo->query("SELECT COMMUNE, EDIFICE, LEGENDE, AUTEUR, DATE, MINIATURE FROM PHOTOS where NUMDEPT='$dep'");
 while ($row = $stmtPhotos->fetch()){
-    $tabPhoto[] = array($row['COMMUNE'],$row['EDIFICE'],$row['LEGENDE'],$row['AUTEUR'],$row['DATE'],$row['MINIATURE']);
     $resultat = addslashes($row['COMMUNE']);
-
-    $stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NOMVILLE='$resultat'");
+    $stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NOMVILLE='$resultat' AND NUMDEPT='$dep'");
     $row1 = $stmtVille->fetch();
-    $tabVille[] = array($row1['NOMVILLE'],$row1['GPS_LAT'],$row1['GPS_LNG']);
+    if ($row1 != FALSE)
+    {
+        $tabPhoto[] = array($row['COMMUNE'],$row1['GPS_LAT'],$row1['GPS_LNG'],$row['EDIFICE'],$row['LEGENDE'],$row['AUTEUR'],$row['DATE'],$row['MINIATURE']);
+    };
 };
 
 
 // var_dump($tabPhoto);
-// var_dump($tabVille);
-
-
-
-
 ?>
