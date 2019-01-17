@@ -14,13 +14,21 @@
 
 <?php
 
-    $servername = 'localhost';
-    $dbname = 'DATA_PROJECT';
-    $username = 'DP';
-    $password = 'Data_Project';
+    $file_json = file_get_contents("config.json");
+    $parsed_json = json_decode($file_json, true);
+    $dbadmin = $parsed_json['dbadmin'];
+    $adminPass = $parsed_json['adminPass'];
+    $servername = $parsed_json['servername'];
+    $dbname = $parsed_json['dbname'];
+    $username = $parsed_json['username'];
+    $password = $parsed_json['password'];
 
 
-    // Futur - créer la base de données
+    // Créer la base de données
+    $conn = new PDO("mysql:host=$servername", $dbadmin, $adminPass);
+    $requete_pdo = "DROP DATABASE IF EXISTS".$dbname;
+    $conn->prepare($requete_pdo);
+    $requete_pdo->execute();
 
     // creer un utilisateur 
     // donner les droits d'administration sur la base à l'utilisateur
