@@ -44,14 +44,17 @@ $tabPhoto = array();
 $stmtPhotos = $pdo->query("SELECT COMMUNE, EDIFICE, LEGENDE, AUTEUR, DATE, MINIATURE FROM PHOTOS where NUMDEPT='$dep'");
 while ($row = $stmtPhotos->fetch()){
     $resultat = addslashes($row['COMMUNE']);
+    // Si le nom contient une particule entre parenthese, on enles celle ci et on remet tout dans l'ordre
+    if(preg_match("#\(Le\)#", $resultat) || preg_match("#\(Les\)#", $resultat) || preg_match("#\(La\)#", $resultat)){
+        preg_match('#\(+(.*)\)+#', $resultat, $result);
+        $texte = preg_replace( '~\(.*\)~' , "", $resultat);   
+        $resultat = $result[1]." ". $texte; 
+    }
+    
     $stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NOMVILLE='$resultat' AND NUMDEPT='$dep'");
     $row1 = $stmtVille->fetch();
-    if ($row1 != FALSE)
-    {
+    if ($row1 != FALSE) {
         $tabPhoto[] = array($row['COMMUNE'],$row1['GPS_LAT'],$row1['GPS_LNG'],$row['EDIFICE'],$row['LEGENDE'],$row['AUTEUR'],$row['DATE'],$row['MINIATURE']);
     };
 };
-
-
-// var_dump($tabPhoto);
 ?>
