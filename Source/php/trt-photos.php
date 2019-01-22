@@ -1,6 +1,8 @@
 <?php
 $edifice = addslashes($_GET["edifice"]);
 $commune = addslashes($_GET["commune"]);
+$dep = $_GET["dep"];
+
 
 $host = '127.0.0.1';
 $db   = 'DATA_PROJECT';

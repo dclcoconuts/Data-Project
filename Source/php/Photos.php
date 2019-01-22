@@ -21,7 +21,7 @@
             }
         ?>
         <div class="bouton">
-            <a href="../../index.php"><img src="../img/france-map.png" alt="bouton"></a>
+            <a href="departement.php?dep=<?php echo($dep);?>"><img src="../img/france-map.png" alt="bouton"></a>
         </div>
     </div>
     <footer>
