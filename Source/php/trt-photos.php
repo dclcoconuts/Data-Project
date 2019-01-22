@@ -1,5 +1,5 @@
 <?php
-$edifice = $_GET["edifice"];
+$edifice = addslashes($_GET["edifice"]);
 $commune = addslashes($_GET["commune"]);
 
 $host = '127.0.0.1';
