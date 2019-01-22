@@ -1,5 +1,4 @@
 <?php
-
 $dep = $_GET["dep"];
 
 $host = '127.0.0.1';
@@ -22,26 +21,24 @@ try {
 // VILLE PREFECTURE
 
 $stmt = $pdo->query("SELECT PREFECTURE FROM PREFECTURE where NUMDEPT='$dep'");
-while ($row = $stmt->fetch()) 
-{
+while ($row = $stmt->fetch()) {
     $result = addslashes($row['PREFECTURE']);
 }
 
 // PREFECTURE GPS
 
 $stmt = $pdo->query("SELECT GPS_LAT, GPS_LNG FROM VILLE where NOMVILLE='$result' AND NUMDEPT='$dep'");
-while ($row = $stmt->fetch())
-{
+while ($row = $stmt->fetch()){
      $glat = $row['GPS_LAT'];
      $glng = $row['GPS_LNG'];
 }
-
 
 // Recuperer nom de chaque ville présente dans le fichier PHOTOS pour le département
 // et selectionne sa latitude et sa longitude dans le fichier VILLE
 $tabPhoto = array();
 
-$stmtPhotos = $pdo->query("SELECT COMMUNE, EDIFICE, LEGENDE, AUTEUR, DATE, MINIATURE FROM PHOTOS where NUMDEPT='$dep'");
+
+$stmtPhotos = $pdo->query("SELECT COMMUNE, EDIFICE, LEGENDE, AUTEUR, DATE, MINIATURE FROM PHOTOS where NUMDEPT='$dep' GROUP BY EDIFICE");
 while ($row = $stmtPhotos->fetch()){
     $resultat = addslashes($row['COMMUNE']);
     // Si le nom contient une particule entre parenthese, on enles celle ci et on remet tout dans l'ordre
@@ -50,7 +47,6 @@ while ($row = $stmtPhotos->fetch()){
         $texte = preg_replace( '~\(.*\)~' , "", $resultat);   
         $resultat = $result[1]." ". $texte; 
     }
-    
     $stmtVille = $pdo->query("SELECT NOMVILLE, GPS_LAT, GPS_LNG FROM VILLE where NOMVILLE='$resultat' AND NUMDEPT='$dep'");
     $row1 = $stmtVille->fetch();
     if ($row1 != FALSE) {

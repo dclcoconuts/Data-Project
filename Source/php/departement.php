@@ -1,4 +1,5 @@
 <?php include "geo.php";?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,19 +11,28 @@
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
 		<link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
 		<script type='text/javascript' src='https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js'></script>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+				integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		
 		<script type="text/javascript">
 			// On initialise la latitude et la longitude de Paris (centre de la carte
 			var lat = <?php echo json_encode($glat); ?>;
 			var lon = <?php echo json_encode($glng); ?>;
 			var macarte = null;
 			// variable table : tableau contenant le résultat de la requête des differents marqueurs par dept
-
 			var tabPhoto = <?php echo json_encode($tabPhoto); ?>;
 			var markerClusters;
-			
 			// Fonction d'initialisation de la carte
-			function initMap() {
+			function initMap(){
 				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
 				macarte = L.map('map').setView([lat, lon], 11);
 				markerClusters = L.markerClusterGroup(); // Nous initialisons les groupes de marqueurs
@@ -47,19 +57,18 @@
 			};
    			// Nous ajoutons un marqueur
 			// Nous parcourons la liste des villes
-			
 			for (i=0; i<tabPhoto.length; i++){
 				var marker = L.marker([tabPhoto[i][1],tabPhoto[i][2]],{icon: monument});
 				//CM : Pour personnaliser la fenêtre popup pour chaque marqueur
 				var html = '';
-				html += '<h2>Commune : ' + tabPhoto[i][0] + '</h2></br>';
+				html += '<h3>Commune : ' + tabPhoto[i][0] + '</h></br>';
 				html += '<h4>Edifice : ' + tabPhoto[i][3] + '</h4></br>';
 				html += '<h4>Legende : ' + tabPhoto[i][4] + '</h4></br>';
 				html += '<h4>Auteur : ' + tabPhoto[i][5] + '</h4></br>';
 				html += '<h4>Date : ' + tabPhoto[i][6] + '</h4></br>';				
-				html += '<img src=\"' + tabPhoto[i][7]+ '\" style=\"width:200px;height:200px\"=/></br>';		
+				html += '<img src=\"' + tabPhoto[i][7]+ '\"  style=\"width:200px;height:200px\"=/></br><br>';
+				html += '<a target=_blanck href="./Photos.php?edifice=' + tabPhoto[i][3] + '&commune=' + tabPhoto[i][0] + '">Plus de photos</a><br>';
 				marker.bindPopup(html,customOptions);
-				
 				markerClusters.addLayer(marker); // Nous ajoutons le marqueur aux groupes
 				}
 				macarte.addLayer(markerClusters);
@@ -68,11 +77,13 @@
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 				initMap();
 			};
+			
 		</script>
 		<title>Departement</title>
 	</head>
 	<body>
 		<div id="map"></div>
+	
 		<a class="carte" href="../../index.php"><img src="../img/france-map.png" alt="bouton"></a>
 	</body>
 </html>

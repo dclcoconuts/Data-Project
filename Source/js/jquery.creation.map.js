@@ -9,8 +9,7 @@ $(document).ready(function() {
         selectedColor: "#EC0000",
         enableZoom: true,
         showTooltip: true,
-        onRegionClick: function(element, code, region)
-        {
+        onRegionClick: function(element, code, region){
             window.location.href = './Source/php/departement.php?dep=' + code;
         }
     });
