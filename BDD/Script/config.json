@@ -2,7 +2,7 @@
     "servername": "localhost",
     "dbadmin": "root",
     "adminPass": "root",
-    "dbname": "DATA_ESSAI",
+    "dbname": "DATA_PROJECT",
     "username": "DP",
     "password": "Data_Project"
 }
