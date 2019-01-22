@@ -34,14 +34,14 @@
 			// Fonction d'initialisation de la carte
 			function initMap(){
 				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
-				macarte = L.map('map').setView([lat, lon], 11);
+				macarte = L.map('map').setView([lat, lon], 9);
 				markerClusters = L.markerClusterGroup(); // Nous initialisons les groupes de marqueurs
                 // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
                 L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
                     // Il est toujours bien de laisser le lien vers la source des données
                     attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
-                    minZoom: 1,
-                    maxZoom: 20
+                    minZoom: 6,
+                    maxZoom: 18,
 				}).addTo(macarte);
 			// CM : creation marqueur ppersonnalisé
 			var monument = L.icon({
@@ -61,11 +61,11 @@
 				var marker = L.marker([tabPhoto[i][1],tabPhoto[i][2]],{icon: monument});
 				//CM : Pour personnaliser la fenêtre popup pour chaque marqueur
 				var html = '';
-				html += '<h3>Commune : ' + tabPhoto[i][0] + '</h></br>';
-				html += '<h4>Edifice : ' + tabPhoto[i][3] + '</h4></br>';
-				html += '<h4>Legende : ' + tabPhoto[i][4] + '</h4></br>';
-				html += '<h4>Auteur : ' + tabPhoto[i][5] + '</h4></br>';
-				html += '<h4>Date : ' + tabPhoto[i][6] + '</h4></br>';				
+				html += '<h4>Commune : ' + tabPhoto[i][0] + '</h4></br>';
+				html += '<h5>Edifice : ' + tabPhoto[i][3] + '</h5>';
+				html += '<h5>Legende : ' + tabPhoto[i][4] + '</h5>';
+				html += '<h5>Auteur : ' + tabPhoto[i][5] + '</h5>';
+				html += '<h5>Date : ' + tabPhoto[i][6] + '</h5>';				
 				html += '<img src=\"' + tabPhoto[i][7]+ '\"  style=\"width:200px;height:200px\"=/></br><br>';
 				html += '<a target=_blanck href="./Photos.php?edifice=' + tabPhoto[i][3] + '&commune=' + tabPhoto[i][0] + '">Plus de photos</a><br>';
 				marker.bindPopup(html,customOptions);
