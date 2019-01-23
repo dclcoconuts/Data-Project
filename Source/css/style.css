@@ -106,7 +106,7 @@ body {
 }
 
 #carte {
-  margin-top: 70px;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -132,12 +132,6 @@ footer {
           box-shadow: 0 0 20px black;
   line-height: 50px;
   text-align: center;
-}
-
-@media screen and (min-width: 919px) {
-  footer {
-    position: relative;
-  }
 }
 
 .lien {
@@ -181,12 +175,12 @@ main {
 }
 
 .bouton {
-  Position: fixed;
+  position: fixed;
   top: 7px;
   left: 5px;
   width: 40px;
   height: 40px;
-  z-index: 10;
+  z-index: 3;
 }
 
 .taille {
@@ -234,7 +228,7 @@ h2 {
   left: 3px;
   width: 50px;
   height: 50px;
-  z-index: 10;
+  z-index: 3;
 }
 
 .leaflet-control-zoom-in {
@@ -254,7 +248,7 @@ h2 {
 
 /* page photo */
 .photos {
-  margin-top: 90px;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -269,9 +263,5 @@ h2 {
 
 .bloc {
   width: 30%;
-}
-
-.footer_photo {
-  position: fixed;
 }
 /*# sourceMappingURL=style.css.map */

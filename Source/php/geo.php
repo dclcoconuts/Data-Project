@@ -53,4 +53,7 @@ while ($row = $stmtPhotos->fetch()){
         $tabPhoto[] = array($row['COMMUNE'],$row1['GPS_LAT'],$row1['GPS_LNG'],$row['EDIFICE'],$row['LEGENDE'],$row['AUTEUR'],$row['DATE'],$row['MINIATURE']);
     };
 };
+
+$stmtPhotos->closeCursor();
+$stmt->closeCursor();
 ?>

@@ -14,7 +14,7 @@
 }
 
 // variables
-
+$header-ht-ft: 50px;
 $header-bg: #795548;
 $Phone: 480px;
 $Tablet: 768px;
@@ -92,10 +92,10 @@ header{
 	position: fixed;
 	top: 0;
 	text-align: center;
-	height: 50px;
+	height: $header-ht-ft;
 	background-color: $header-bg;
 	width: 100%;
-	line-height: 50px;
+	line-height: $header-ht-ft;
 	border-radius: 10px;
 	box-shadow: 0 0 20px black;
 	z-index: 2;
@@ -106,7 +106,7 @@ body{
 	background-color: #8D6E63;
 }
 #carte{
-	margin-top: 70px;
+	margin-top: $header-ht-ft + 10px;
 	display: flex;
 	justify-content: center;
 }
@@ -117,16 +117,13 @@ body{
 footer{
 	background-color: #BCAAA4;
 	width: 100%;
-	height: 50px;
+	height: $header-ht-ft;
 	position: fixed;
 	bottom: 0;
 	border-radius: 10px;
 	box-shadow: 0 0 20px black;
-	line-height: 50px;
+	line-height: $header-ht-ft;
     text-align: center;
-    @include media-min (919px){
-        position: relative;
-    }
 }
 
 .lien{
@@ -166,12 +163,12 @@ main{
 }
 
 .bouton{
-	Position: fixed;
+	position: fixed;
 	top: 7px;
 	left: 5px;
 	width: 40px;
 	height: 40px;
-	z-index: 10;
+	z-index: 3;
 }
 
 .taille{
@@ -212,7 +209,7 @@ h2{
 	left: 3px;
 	width: 50px;
 	height: 50px;
-	z-index: 10;
+	z-index: 3;
 }
 
 .leaflet-control-zoom-in{
@@ -225,13 +222,13 @@ h2{
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-	background: #BCAAA4 ! important;
+	background: #BCAAA4 !important;
 }
 
 /* page photo */
 
 .photos{
-	margin-top: 90px;
+	margin-top: $header-ht-ft + 10px;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -240,8 +237,4 @@ h2{
 
 .bloc{
 	width: 30%;
-}
-
-.footer_photo{
-    position: fixed;
 }
