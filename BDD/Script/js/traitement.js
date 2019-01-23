@@ -1,6 +1,7 @@
 
 function createbase() {
-    document.getElementById("button").style.display = "none";    
+    document.getElementById("button").style.display = "none";  
+    document.getElementById("explain").style.display = "none";  
     document.getElementById("text").style.display = "block";
     document.getElementById("loader").style.display = "block";
     var xhttp = new XMLHttpRequest;

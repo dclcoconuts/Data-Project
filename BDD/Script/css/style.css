@@ -1,22 +1,114 @@
-html, body{
-    margin: 0 0 0 20px;
-    padding: 0;
-    background-color: #8D6E63;
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
+
+/* style de la page index */
+h1 {
+  text-transform: uppercase;
+  font-size: 0.5em;
+}
+
+@media screen and (min-width: 480px) {
+  h1 {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 1.7em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    padding: 20px;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  text-align: center;
+  height: 50px;
+  background-color: #795548;
+  width: 100%;
+  line-height: 50px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 20px black;
+          box-shadow: 0 0 20px black;
+  z-index: 2;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #8D6E63;
+}
+
+#corps {
+  margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.carte {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+}
+
+img{
+  width: 100%;
+}
+
+#explain{
+  display: block;
+}
+
 #resultat {
-    display: none;
+
+  display: none;
 }
 
 #text {
-    position: absolute;
-    left: 35%;
-    top: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     display:none;
 }
+
 #button{
     border-radius: 25px;
     background-color: #BCAAA4;
-    height: 25px;
+    height: 35px;
+    width: 25%;
 }
 
 /* Center the loader */
@@ -37,6 +129,19 @@ html, body{
     animation: spin 2s linear infinite;
     display : none;
 }
+
+footer {
+    background-color: #BCAAA4;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 20px black;
+            box-shadow: 0 0 20px black;
+    line-height: 50px;
+    text-align: center;
+  }
   
 @-webkit-keyframes spin {
     0% { -webkit-transform: rotate(0deg); }
