@@ -125,13 +125,19 @@ footer {
   background-color: #BCAAA4;
   width: 100%;
   height: 50px;
-  position: fixed;
+  position: relative;
   bottom: 0;
   border-radius: 10px;
   -webkit-box-shadow: 0 0 20px black;
           box-shadow: 0 0 20px black;
   line-height: 50px;
   text-align: center;
+}
+
+@media screen and (min-height: 920px) {
+  footer {
+    position: fixed;
+  }
 }
 
 .lien {
@@ -175,7 +181,7 @@ main {
 }
 
 .bouton {
-  Position: fixed;
+  position: fixed;
   top: 7px;
   left: 5px;
   width: 40px;
@@ -263,5 +269,9 @@ h2 {
 
 .bloc {
   width: 30%;
+}
+
+.footer_photo {
+  position: fixed;
 }
 /*# sourceMappingURL=style.css.map */

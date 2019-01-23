@@ -84,7 +84,6 @@
 	</head>
 	<body>
 		<div id="map"></div>
-	
 		<a class="carte" href="../../index.php"><img src="../img/france-map.png" alt="bouton"></a>
 	</body>
 </html>

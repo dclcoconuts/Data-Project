@@ -10,4 +10,6 @@ while ($rownew = $stmtnewPhotos->fetch()){
         $tabnewPhoto[] = array($rownew['IMAGE']);
     };
 };
+
+$stmtnewPhotos->closeCursor();
 ?>
