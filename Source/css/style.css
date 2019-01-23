@@ -134,12 +134,6 @@ footer {
   text-align: center;
 }
 
-@media screen and (min-width: 919px) {
-  footer {
-    position: relative;
-  }
-}
-
 .lien {
   font-size: 1em;
   margin-left: 20px;
@@ -269,9 +263,5 @@ h2 {
 
 .bloc {
   width: 30%;
-}
-
-.footer_photo {
-  position: fixed;
 }
 /*# sourceMappingURL=style.css.map */

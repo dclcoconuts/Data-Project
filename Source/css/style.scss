@@ -1,4 +1,3 @@
-
  *{
 	padding: 0;
 	margin: 0;
@@ -124,9 +123,6 @@ footer{
 	box-shadow: 0 0 20px black;
 	line-height: 50px;
     text-align: center;
-    @include media-min (919px){
-        position: relative;
-    }
 }
 
 .lien{
@@ -240,8 +236,4 @@ h2{
 
 .bloc{
 	width: 30%;
-}
-
-.footer_photo{
-    position: fixed;
 }
