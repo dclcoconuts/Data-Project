@@ -106,6 +106,15 @@ footer{
 	font-size: 1em;
 	margin-left: 20px;
 }
+.build {
+	float: right;
+	height: 30px;
+	width: 30px;
+	margin-top : 10px;
+	margin-right : 20px;
+
+	color: black;
+}
 /* media queries */
 @media screen and (min-width : 1060px){
 	h1{
