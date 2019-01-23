@@ -21,10 +21,10 @@
             }
         ?>
         <div class="bouton">
-            <a href="departement.php?dep=<?php echo($dep);?>"><img src="../img/france-map.png" alt="bouton"></a>
+            <a href="departement.php?dep=<?php echo($dep);?>"><img src="../img/arrow-back.png" alt="bouton"></a>
         </div>
     </div>
-    <footer>
+    <footer class="footer_photo">
         <span class="lien"class="lien" href="#">Copyright © 2019 Dcl-Aramis</span>
         <a class="lien" href="./Source/html/mention.html">Mentions légale</a>
     </footer>

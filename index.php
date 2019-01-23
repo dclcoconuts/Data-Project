@@ -3,11 +3,9 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Map France</title> 
-    
     <?php
     include ('./Source/php/head.php');
     ?>
-	
 </head>
   <body>
 		<header>
@@ -18,7 +16,8 @@
 		</div>
 		<footer>
 			<span class="lien"class="lien" href="#">Copyright © 2019 Dcl-Aramis</span>
-			<a class="lien" href="./Source/html/mention.html">Mentions légale</a>
+			<a class="lien" href="./Source/html/mention.html">Mentions légales</a>
+			<a class="build" target=_blanck href="./BDD/Script/index.php"><img src="./Source/img/build.png" alt="Construction Base de données"><span>Installation BDD</span></a>
 		</footer>
   </body>
 </html>

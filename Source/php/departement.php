@@ -68,7 +68,7 @@
 				html += '<h5>Auteur : ' + tabPhoto[i][5] + '</h5>';
 				html += '<h5>Date : ' + tabPhoto[i][6] + '</h5>';				
 				html += '<img src=\"' + tabPhoto[i][7]+ '\"  style=\"width:200px;height:200px\"=/></br><br>';
-				html += '<a target=_blanck href="./Photos.php?edifice=' + tabPhoto[i][3] + '&commune=' + tabPhoto[i][0] + '&dep=' + dep + '">Plus de photos</a><br>';
+				html += '<a href="./Photos.php?edifice=' + tabPhoto[i][3] + '&commune=' + tabPhoto[i][0] + '&dep=' + dep + '">Plus de photos</a><br>';
 				marker.bindPopup(html,customOptions);
 				markerClusters.addLayer(marker); // Nous ajoutons le marqueur aux groupes
 				}
