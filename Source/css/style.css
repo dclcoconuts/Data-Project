@@ -69,13 +69,13 @@ h1 {
 
 @media screen and (min-width: 900px) {
   h1 {
-    font-size: 1.7em;
+    font-size: 1.6em;
   }
 }
 
 @media screen and (min-width: 1024px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.9em;
   }
 }
 
@@ -106,13 +106,16 @@ body {
 }
 
 #carte {
-  margin-top: 70px;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #francemap {
@@ -182,8 +185,8 @@ main {
 
 .bouton {
   position: fixed;
-  top: 7px;
-  left: 5px;
+  top: 5px;
+  left: 10px;
   width: 40px;
   height: 40px;
   z-index: 10;
@@ -268,7 +271,19 @@ h2 {
 }
 
 .bloc {
-  width: 30%;
+  width: 90%;
+}
+
+@media screen and (min-width: 768px) {
+  .bloc {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bloc {
+    width: 30%;
+  }
 }
 
 .footer_photo {

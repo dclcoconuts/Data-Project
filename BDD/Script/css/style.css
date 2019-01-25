@@ -1,45 +1,44 @@
 @charset "UTF-8";
 * {
-  padding: 0;
-  margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* style de la page index */
 h1 {
-  text-transform: uppercase;
-  font-size: 0.5em;
+    text-transform: uppercase;
+    font-size: 0.5em;
 }
-
+h2{
+    margin: 20px 0;
+}
+p{
+    margin: 10px 10px;
+}
 @media screen and (min-width: 480px) {
-  h1 {
-    font-size: 0.8em;
-  }
+    h1 {
+        font-size: 0.8em;
+    }
 }
 
 @media screen and (min-width: 768px) {
-  h1 {
-    font-size: 1.2em;
-  }
+    h1 {
+        font-size: 1.2em;
+    }
 }
 
 @media screen and (min-width: 900px) {
-  h1 {
-    font-size: 1.7em;
-  }
+    h1 {
+        font-size: 1.5em;
+    }
 }
 
 @media screen and (min-width: 1024px) {
-  h1 {
-    font-size: 2em;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  h2 {
-    padding: 20px;
-  }
+    h1 {
+        font-size: 1.7em;
+    }
 }
 
 header {
@@ -63,35 +62,43 @@ body {
 }
 
 #corps {
-  margin-top: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+    margin-top: 70px;
+    padding: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 .carte {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  width: 70px;
-  height: 70px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+}
+
+.carte_index{
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 40px;
+    height: 40px;
 }
 
 img{
-  width: 100%;
+     width: 100%;
 }
 
 #explain{
-  display: block;
+    display: block;
 }
 
 #resultat {
-
-  display: none;
+    display: none;
 }
 
 #text {
@@ -109,6 +116,8 @@ img{
     background-color: #BCAAA4;
     height: 35px;
     width: 25%;
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 /* Center the loader */
@@ -168,6 +177,6 @@ footer {
 }
 
 @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
-    to{ bottom:0; opacity:1 }
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0; opacity:1 }
     }

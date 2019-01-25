@@ -1,4 +1,4 @@
- *{
+*{
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
@@ -71,7 +71,9 @@ $Destop: 1024px;
   width: 100%;
   height: 500px;
 }
+
 /* style de la page index */
+
 h1{
 	text-transform: uppercase;
     font-size: 0.5em;
@@ -82,10 +84,10 @@ h1{
         font-size: 1.2em;
     }
     @include media-min (900px){
-        font-size: 1.7em;
+        font-size: 1.6em;
     }
     @include media-min ($Destop){
-        font-size: 2em;
+        font-size: 1.9em;
     }
 }
 h2{
@@ -111,9 +113,11 @@ body{
 	background-color: #8D6E63;
 }
 #carte{
-	margin-top: 70px;
+	// margin-top: 70px;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 #francemap{
 	border-radius: 10px;
@@ -172,8 +176,8 @@ main{
 
 .bouton{
 	position: fixed;
-	top: 7px;
-	left: 5px;
+	top: 5px;
+	left: 10px;
 	width: 40px;
 	height: 40px;
 	z-index: 10;
@@ -244,7 +248,13 @@ h2{
 }
 
 .bloc{
-	width: 30%;
+	width: 90%;
+    @include media-min ($Tablet){
+		width: 40%;
+    }
+    @include media-min ($Destop){
+		width: 30%;
+    }
 }
 .footer_photo{
 	position: fixed;

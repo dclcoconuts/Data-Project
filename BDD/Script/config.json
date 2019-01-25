@@ -1,7 +1,7 @@
 {
     "servername": "localhost",
-    "dbadmin": "root",
-    "adminPass": "root",
+    "dbadmin": "A remplir",
+    "adminPass": "A remplir",
     "dbname": "DATA_PROJECT",
     "username": "DP",
     "password": "Data_Project"
