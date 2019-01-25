@@ -118,8 +118,16 @@ img{
     width: 25%;
     margin-left: 20px;
     margin-top: 20px;
+    cursor: pointer;
 }
 
+#button:active{
+    outline-style: none; 
+}
+
+#button:visited{
+    outline-style: none; 
+}
 /* Center the loader */
 #loader {
     position: absolute;
