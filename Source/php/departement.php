@@ -78,7 +78,6 @@
 				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
 				initMap();
 			};
-			
 		</script>
 		<title>Departement</title>
 	</head>

@@ -10,7 +10,6 @@
   $username = $parsed_json['username'];
   $password = $parsed_json['password'];
 
-
   // Se connecter à sql
   $conn = new PDO("mysql:host=$servername", $dbadmin, $adminPass);
 
@@ -18,7 +17,7 @@
   $requete_pdo = "DROP DATABASE IF EXISTS ".$dbname;
   $conn->prepare($requete_pdo)->execute();
 
-  // Supprimer la base de données si elle existe
+  // Créer la base de données
   $requete_pdo = "CREATE DATABASE ".$dbname;
   $conn->prepare($requete_pdo)->execute();
 
@@ -26,11 +25,11 @@
   $requete_pdo = "USE ".$dbname;
   $conn->prepare($requete_pdo)->execute();  
 
-  $requete_pdo = "CREATE USER ".$username."@".$servername." IDENTIFIED WITH mysql_native_password AS ".$password." GRANT USAGE ON *.* TO ".$username."@".$servername." REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0";
-  $conn->prepare($requete_pdo)->execute(); 
+//   $requete_pdo = "CREATE USER ".$username."@".$servername." IDENTIFIED WITH mysql_native_password AS ".$password." GRANT USAGE ON *.* TO ".$username."@".$servername." REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0";
+//   $conn->prepare($requete_pdo)->execute(); 
 
-  $requete_pdo = "GRANT ALL PRIVILEGES ON ".$dbname.".* TO ".$username."@".$servername;
-  $conn->prepare($requete_pdo)->execute();
+//   $requete_pdo = "GRANT ALL PRIVILEGES ON ".$dbname.".* TO ".$username."@".$servername;
+//   $conn->prepare($requete_pdo)->execute();
 
   $requete_pdo = "DROP TABLE IF EXISTS DEPARTEMENT" ;
   $conn->prepare($requete_pdo)->execute();

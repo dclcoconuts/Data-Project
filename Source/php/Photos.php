@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="../css/style.css" media="screen" rel="stylesheet" type="text/css" />
     <?php
-        include ('./trt-photos.php');
+    include ('./trt-photos.php');
     ?>
     <title>Photos</title>
 </head>
